@@ -83,6 +83,14 @@
                 addDeposit.addEventListener("click", function(){
                         const depositAmount = getInputNumber("depositAmount");
                        
+                        if(depositAmount < 0){
+                                alert("Deposit Number can't be negative");
+                        }else{
+                                updateCurrentText("currentDeposit", depositAmount);
+                                updateCurrentText("currentBalance", depositAmount);
+                                document.getElementById("depositAmount").value= "";
+                        }
+
                         // document.getElementById("depositAmount").value;
                         // const depositNumber = parseFloat(depositAmount);
                         
@@ -91,15 +99,15 @@
                         // const totalDeposit = depositNumber + currentDepositNumber;
 
                         // document.getElementById("currentDeposit").innerText = totalDeposit;
-                        updateCurrentText("currentDeposit", depositAmount);
+                        // updateCurrentText("currentDeposit", depositAmount);
 
                         // const currentBalance = document.getElementById("currentBalance").innerText;
                         // const currentBalanceNumber = parseFloat(currentBalance);
                         // const totalBalance = depositNumber + currentBalanceNumber;
-                        updateCurrentText("currentBalance", depositAmount);
+                        // updateCurrentText("currentBalance", depositAmount);
 
                         // document.getElementById("currentBalance").innerText= totalBalance;
-                        document.getElementById("depositAmount").value= "";
+                       
                 });
                  // withdraw balance area
                  const addWithdraw = document.getElementById("addWithdraw");
